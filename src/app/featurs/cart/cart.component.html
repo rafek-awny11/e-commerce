@@ -1,0 +1,75 @@
+<section class="bg-gray-800 p-4  min-h-screen">
+    <div class="container grid items-start sm:grid-cols-12 gap-10">
+       @if (cartDetails?.products?.length) {
+         <div class="col-span-8  rounded-lg shadow p-4">
+            <div class="flex items-center space-x-4 ">
+                <h1 class="text-3xl text-green-500">Cart</h1>
+                <span class="text-lg text-green-500 "> {{ cartDetails?.products?.length}} Items</span>
+            </div>
+
+
+           @for (item of cartDetails?.products ; track $index) {
+             <div class="bg-white p-2 rounded-lg shadow my-2  grid sm:grid-cols-12 max-h-[80vh] overflow-y-auto">
+                <div class="col-span-1">
+                    <img [src]="item?.product?.imageCover" class="w-full" [alt]="item?.product?.title"/>
+                </div>
+                <div class="col-span-11 flex items-center justify-between  px-4">
+                    <div>
+                        <h3 > {{item?.product?.title}} </h3>
+                        <div class="flex items-center space-x-6 my-4">
+                            <div class="bg-gray-200 border rounded-lg flex items-center space-x-8 py-1 px-2">
+                            <button  (click)="updateCount(item.product._id , item.count -1)" class="cursor-pointer"> <i class="fas fa-minus"></i></button>
+                            <span>{{item.count}}</span>
+                            <button  (click)="updateCount(item.product._id , item.count +1)" class="cursor-pointer"> <i class="fas fa-plus"></i></button>
+
+                        </div>
+                        <button (click)="removeItem(item.product._id)" class="cursor-pointer text-green-700 hover:text-red-700"><i class="fas fa-trash-can"> </i> Clear</button>
+                        </div>
+                    </div>
+                    <span> {{item.price * item.count}} EGP</span>
+                </div>
+
+            </div>
+           }
+
+         <div>
+            <button  (click)="clearCart()"  class="btn text-2xl hover:bg-red-700">
+                clear cart 
+            </button>
+
+        </div>
+ 
+        </div>
+        
+        <div class="col-span-4 bg-white p-4 my-15 rounded-lg shadow">
+            <h2 class="text-2xl">Order Summary</h2>
+            <div class="flex items-center justify-between my-4">
+                <h3>price</h3>
+                <h4> {{ cartDetails?.totalCartPrice}} </h4>
+
+            </div>
+            <button [routerLink]="['/checkout' , cartDetails._id]" class="btn">Proceed To CheckOut </button>
+
+
+           
+
+        </div>
+
+       } @else {
+        
+        <div id="alert-additional-content-4" class="p-8 mb-4 m-10  w-2xl  text-yellow-800 border border-yellow-300 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800" role="alert">
+            <div class="flex items-center ">
+   
+             <h3 class="text-lg font-bold">Your Cart Is Empty </h3>
+            </div>
+            <div class="m-auto mt-5 py-8 text-lg">
+              Add products 
+            </div>
+            <a routerLink="/products" class="btn px-10 py-2  ">Proudcts Page</a>
+            </div>
+
+       }
+
+    </div>
+
+</section>

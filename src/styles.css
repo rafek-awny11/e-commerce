@@ -1,1 +1,69 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+@import "flowbite/src/themes/default.css";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+body {
+font-family: "Edu TAS Beginner", cursive;
+margin: auto;
+
+
+}
+
+.pt-105{
+ padding-top: 80px;
+}
+
+@utility container{
+  margin-inline:auto;
+}
+
+@layer components {
+  .btn{ 
+    @apply disabled:bg-gray-500 disabled:cursor-not-allowed  rounded-2xl bg-green-700 text-white border border-green-900 py-1.5 w-full cursor-pointer hover:bg-green-900 transition-all duration-300 };
+
+  .main-input{
+    @apply block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 dark:bg-gray-700 border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-800 focus:outline-none focus:ring-0 focus:border-green-800
+  };
+  .main-label {
+    @apply absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] start-2.5 peer-focus:text-green-500 peer-focus:dark:text-green-700 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto
+  };
+}
+
+.owl-theme .owl-dots .owl-dot span{
+
+  padding: 4px 7px;
+  height: 5px;
+}
+
+
+.card{
+  @apply border border-gray-400 shadow-lg p-2 relative rounded;
+}
+
+
+
+:root{
+    --main-color: #0aad0a;
+ }
+
+
+.btn-main {
+  background-color: var(--main-color);
+  padding: 7px 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+.btn-main:disabled {
+  cursor: not-allowed;
+  background-color: #ccc;
+}
+.btn-main:disabled:hover {
+  background-color: #ccc;
+}
+.btn-main:hover {
+  background-color: #11bd11;
+}
+

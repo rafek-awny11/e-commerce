@@ -1,0 +1,37 @@
+<section class="bg-gray-200 border rounded-xl border-gray-50 p-10 shadow-md md:w-1/2 mx-auto py-16 my-14 ">
+    <h1 class="text-center  text-green-700 mb-3 text-3xl font-light">login Now</h1>
+
+
+   <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+     
+    <app-input [control]="loginForm.get('email')" [typeInput]="'email'" [idInput]="'email'" [labelInput]="'Email'">
+
+    </app-input>
+    <app-input [control]="loginForm.get('password')"  [idInput]="'password'" [labelInput]="'Password'">
+      Custom field should match the pattern.
+    </app-input>
+
+
+
+
+
+    <a class="text-blue-800" routerLink="/forgot"> Forgot your password?</a>
+
+    <button class="btn mt-5" type="submit">
+        login
+   @if (isLoading) {
+     <span> <i class="fas fa-spinner animate-spin"></i> </span>
+   }
+    
+    </button>
+
+
+    @if (msgError) {
+        <p class="text-center text-red-900 mt-4 p-4 bg-red-500"> {{msgError}} </p>
+    }
+
+
+    
+   </form>
+
+</section>

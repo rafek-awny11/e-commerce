@@ -1,0 +1,135 @@
+<section
+  class="bg-gray-200 border rounded-xl border-gray-50 p-4 shadow-md md:w-1/2 mx-auto my-14"
+>
+  <h1 class="text-center text-green-700 mb-3 text-3xl font-light">
+    Register Now
+  </h1>
+
+  <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
+    <!-- <div class="relative mb-1">
+      @let nameControl = registerForm.get('name');
+      <input
+        [class]="{
+      'border-green-700':nameControl?.valid,
+      'border-red-700':nameControl?.invalid && nameControl?.touched, 
+    }"
+        formControlName="name"
+        type="text"
+        id="name"
+        class="main-input peer"
+        placeholder=" "
+      />
+      <label
+        [class]="{
+      'text-green-700': nameControl?.valid,
+      'text-red-700': nameControl?.invalid && nameControl?.touched, 
+    }"
+        for="name"
+        class="main-label"
+        >Name</label
+      >
+
+      @if (nameControl?.errors && nameControl?.touched ) {
+      <div
+        class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert"
+      >
+        <div>
+          <ul class="mt-1.5 list-disc list-inside">
+            @if (nameControl?.getError('required')) {
+            <li>Input is required.</li>
+            } @else if (nameControl?.getError('minlength')) {
+            <li>Input should be more than or equal 2 chars</li>
+            } @else if (nameControl?.getError('maxlength')) {
+            <li>Input should be more less or equal 2 chars</li>
+
+            }
+          </ul>
+        </div>
+      </div>
+      }
+    </div> -->
+
+    <app-input
+      [control]="registerForm.get('name')"
+      [typeInput]="'text'"
+      [idInput]="'name'"
+      [labelInput]="'Name'"
+    ></app-input>
+
+    <app-input
+      [control]="registerForm.get('email')"
+      [typeInput]="'email'"
+      [idInput]="'email'"
+      [labelInput]="'Email'"
+    ></app-input>
+
+    <app-input
+      [control]="registerForm.get('password')"
+      [idInput]="'password'"
+      [labelInput]="'Password'"
+    > Custom field should match the pattern. </app-input>
+
+    <!-- <div class="relative mb-1">
+      @let rePasswordControl = registerForm.get('rePassword');
+
+      <input
+        [class]="{
+      'border-green-700': rePasswordControl?.valid,
+      'border-red-700': rePasswordControl?.invalid && rePasswordControl?.touched,
+    }"
+        formControlName="rePassword"
+        type="password"
+        id="rePassword"
+        class="main-input peer"
+        placeholder=" "
+      />
+      <label
+        [class]="{
+          'text-green-700': rePasswordControl?.valid,
+          'text-red-700':
+            rePasswordControl?.invalid && rePasswordControl?.touched
+        }"
+        for="rePassword"
+        class="main-label"
+        >raPassword</label
+      >
+
+      @if (registerForm.getError('nomatch') &&
+      registerForm.get('rePassword')?.touched) {
+      <div
+        class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert"
+      >
+        <div>
+          <ul class="mt-1.5 list-disc list-inside">
+            <li>Password confirmtion is incorrect.</li>
+          </ul>
+        </div>
+      </div>
+      }
+    </div> -->
+    <app-input
+      [control]="registerForm.get('rePassword')"
+      [idInput]="'rePassword'"
+      [labelInput]="'RaPassword'"
+    ></app-input>
+
+    <app-input
+      [control]="registerForm.get('phone')"
+      [typeInput]="'tel'"
+      [idInput]="'phone'"
+      [labelInput]="'Phone'"
+    > accept only egypt phone numbers. </app-input>
+
+    <button class="btn mt-5" type="submit">
+      Register @if (isLoading) {
+      <span> <i class="fas fa-spinner animate-spin"></i> </span>
+      }
+    </button>
+
+    @if (msgError) {
+    <p class="text-center text-red-900 mt-4 p-4 bg-red-500">{{ msgError }}</p>
+    }
+  </form>
+</section>
