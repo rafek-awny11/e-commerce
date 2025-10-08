@@ -55,6 +55,7 @@ getCartId(): void{
       next:(res)=>{
         console.log(res);
         if(res.status === 'success') {
+           
           window.open(res.session.url, '_self');
         }
       },
@@ -69,6 +70,7 @@ getCartId(): void{
         next:(res)=>{
         console.log(res);
         if(res.status === 'success') {
+         
           setTimeout(() => {
             this.router.navigate(['/home']);
           }, 1000);

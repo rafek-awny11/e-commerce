@@ -70,8 +70,10 @@ export class CartService {
  
 getUserOrders(userId:string): Observable<any> {
   return this.httpClient.get(
-    environment.baseUrl + `orders/user/${userId}` + userId,
+    environment.baseUrl + `orders/user/${userId}` ,
     this.myHeaders()
   );
 } 
+
+
 }

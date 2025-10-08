@@ -24,21 +24,23 @@ ngOnInit(): void {
   this.getAllOrders();
 }
 
+
+
 getUserId():string {
    return this.cookieService.get(STORED_KEYS.userId) || ''  
 }
 
  getAllOrders(): void {
   
-  
-
   this.cartService.getUserOrders(this.getUserId()).subscribe({
       next: (res) => {
         console.log('Raw data', res);
-        this.orderDetails = Array.isArray(res.data) ? res.data : [];
+        this.orderDetails = Array.isArray(res) ? res : [];
+       
+        
      
-      console.log('First Order ID:', this.orderDetails[0]?._id);
-        // console.log('Orders after mapping', this.orderDetails);
+        console.log('Orders after mapping', this.orderDetails);
+        
     },
      error: (err) => {
       console.error('Error fetching orders:', err);
@@ -46,5 +48,8 @@ getUserId():string {
   });
   
 }
+
+
+
 
 }
