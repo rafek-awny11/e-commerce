@@ -8,6 +8,8 @@
 
       </div>
 
+      
+
 
         @for (order of orderDetails; track $index) {
         <div class="bg-gray-700 text-white rounded-2xl shadow-2xl p-5 my-4">
@@ -15,7 +17,7 @@
           <h4 class="text-sm mb-1 text-green-400">Payment: {{ order.paymentMethodType }}</h4>
           <h4 class="text-sm mb-3 text-green-400">Total Price: {{ order.totalOrderPrice }} EGP</h4>
 
-           <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
             @for (productItem of order.cartItems; track $index) {
               <div class="bg-gray-300 rounded-xl p-3 shadow">
                 <img
@@ -29,37 +31,12 @@
               </div>
             }
       
-    <!-- @for ( item of orderDetails; track $index) {
-       <div class=" bg-gray-400 shadow-2xl rounded-2xl p-5 my-2  grid sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-12 ">
-      <div class=" col-span-3  ">
-        <img [src]="item.cartItems[0].product.imageCover" class="w-full rounded-xl"  [alt]="item.cartItems[0].product.title" />
-
-      </div>
-      <div class="col-span-4 px-4 ">
-        <div  class="py-2">
-          <h3 class="text-2xl">{{ item.cartItems[0].product.title}}</h3>
-         
-           <h4 class="text-white">Price: {{item.totalOrderPrice}}</h4>
-            <h4 class="text-white">Payment: {{item.paymentMethodType}}</h4>
-
-
-
-
-        </div>
-
-      </div>
-
-    </div>
-   
-    } -->
+    
   
     </div>
-         
-   </div>
-  }
-
-  
-   </div>
-   </div>
+  </div>
+  }  
+</div>
+</div>
 
 </section>

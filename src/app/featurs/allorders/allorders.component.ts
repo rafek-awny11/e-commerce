@@ -12,7 +12,7 @@ import { STORED_KEYS } from '../../core/constants/storedKeys';
   templateUrl: './allorders.component.html',
   styleUrl: './allorders.component.css'
 })
-export class AllordersComponent implements OnInit {
+export class AllordersComponent implements OnInit  {
 private readonly cartService = inject(CartService);
 private readonly cookieService = inject(CookieService);
 
@@ -20,27 +20,30 @@ private readonly cookieService = inject(CookieService);
 orderDetails: Order [] = [];
 
 ngOnInit(): void {
- 
-  this.getAllOrders();
-}
 
+  this.getAllOrders();
+};
 
 
 getUserId():string {
    return this.cookieService.get(STORED_KEYS.userId) || ''  
-}
+};
 
  getAllOrders(): void {
-  
+   this.orderDetails = [];
   this.cartService.getUserOrders(this.getUserId()).subscribe({
       next: (res) => {
         console.log('Raw data', res);
-        this.orderDetails = Array.isArray(res) ? res : [];
-       
+
+
+        if (Array.isArray(res)) {
         
-     
-        console.log('Orders after mapping', this.orderDetails);
-        
+        this.orderDetails = [res[res.length - 1]];
+      } else {
+        this.orderDetails = [];
+      }
+
+      console.log('Latest order only:', this.orderDetails);
     },
      error: (err) => {
       console.error('Error fetching orders:', err);
