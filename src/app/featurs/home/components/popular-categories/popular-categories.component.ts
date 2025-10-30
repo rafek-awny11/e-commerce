@@ -2,10 +2,11 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CategoriesService } from '../../../../core/services/categories/categories.service';
 import { Category } from '../../../../core/models/product.interface';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-popular-categories',
-  imports: [CarouselModule ],
+  imports: [CarouselModule , TranslatePipe ],
   templateUrl: './popular-categories.component.html',
   styleUrl: './popular-categories.component.css'
 })
@@ -23,7 +24,7 @@ export class PopularCategoriesComponent implements OnInit {
     autoplay: true,
     autoplayTimeout:2000,
     autoplayHoverPause:true,
-   
+    rtl:true,
     margin: 10,
     navSpeed: 7000,
     navText: ['', ''],

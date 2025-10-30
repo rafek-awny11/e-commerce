@@ -1,16 +1,16 @@
 <section class="bg-gray-100 py-16 border border-gray-400">
     <div class="container">
-        <h2 class="text-5xl text-green-800">Products List</h2>
+        <h2 class="text-5xl text-green-800">{{'shop.productsList' | translate}}</h2>
 
-        <input [(ngModel)]="text" type="search" class="border border-green-700 block w-1/2 mx-auto my-10 rounded-2xl" placeholder="searchProduct..." /> 
+        <input [(ngModel)]="text" type="search" class="border border-green-700 block w-1/2 mx-auto my-10 rounded-2xl" placeholder="{{'shop.searchProduct...' | translate}}" /> 
 
         <div class="parent mt-10  grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 ">
 
 
         @for (product of productsList() | paginate: { id: 'foo',
-                                                      itemsPerPage: pageSize,
-                                                      currentPage: p,
-                                                      totalItems: total } | search :  text ; track product.id) {
+                                                    itemsPerPage: pageSize,
+                                                    currentPage: p,
+                                                    totalItems: total } | search :  text ; track product.id) {
                 <app-card [product]="product"/>
         }
 

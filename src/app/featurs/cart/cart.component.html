@@ -3,8 +3,8 @@
        @if (cartDetails?.products?.length) {
          <div class="col-span-8  rounded-lg shadow p-4">
             <div class="flex items-center space-x-4 ">
-                <h1 class="text-3xl text-green-500">Cart</h1>
-                <span class="text-lg text-green-500 "> {{ cartDetails?.products?.length}} Items</span>
+                <h1 class="text-3xl text-green-500">{{'shop.cart' | translate}}</h1>
+                <span class="text-lg text-green-500 "> {{ cartDetails?.products?.length}} {{'shop.items' | translate}}</span>
             </div>
 
 
@@ -23,7 +23,7 @@
                             <button  (click)="updateCount(item.product._id , item.count +1)" class="cursor-pointer"> <i class="fas fa-plus"></i></button>
 
                         </div>
-                        <button (click)="removeItem(item.product._id)" class="cursor-pointer text-green-700 hover:text-red-700"><i class="fas fa-trash-can"> </i> Clear</button>
+                        <button (click)="removeItem(item.product._id)" class="cursor-pointer text-green-700 hover:text-red-700"><i class="fas fa-trash-can"> </i> {{'shop.clear' | translate}}</button>
                         </div>
                     </div>
                     <span> {{item.price * item.count}} EGP</span>
@@ -34,7 +34,7 @@
 
          <div>
             <button  (click)="clearCart()"  class="btn text-2xl hover:bg-red-700">
-                clear cart 
+                {{'shop.clearcart' | translate}} 
             </button>
 
         </div>
@@ -42,13 +42,13 @@
         </div>
         
         <div class="col-span-4 bg-white p-4 my-15 rounded-lg shadow">
-            <h2 class="text-2xl">Order Summary</h2>
+            <h2 class="text-2xl">{{'shop.orderSummary' | translate}}</h2>
             <div class="flex items-center justify-between my-4">
-                <h3>price</h3>
+                <h3>{{'shop.price' | translate}}</h3>
                 <h4> {{ cartDetails?.totalCartPrice}} </h4>
 
             </div>
-            <button [routerLink]="['/checkout' , cartDetails._id]" class="btn">Proceed To CheckOut </button>
+            <button [routerLink]="['/checkout' , cartDetails._id]" class="btn">{{'shop.proceedToCheckOut' | translate}} </button>
 
 
            
@@ -60,12 +60,12 @@
         <div id="alert-additional-content-4" class="p-8 mb-4 m-10  w-2xl  text-yellow-800 border border-yellow-300 rounded-lg bg-yellow-50 dark:bg-yellow-50 dark:text-black dark:border-black "  role="alert">
             <div class="flex items-center ">
    
-             <h3 class="text-lg font-bold">Your Cart Is Empty </h3>
+             <h3 class="text-lg font-bold">{{'shop.yourCartIsEmpty' | translate}} </h3>
             </div>
             <div class="m-auto mt-5 py-8 text-lg">
-              Add products 
+              {{'shop.addproducts' | translate}} 
             </div>
-            <a routerLink="/products" class="btn px-10 py-2  ">Proudcts Page</a>
+            <a routerLink="/products" class="btn px-10 py-2  ">{{'shop.proudctsPage' | translate}}</a>
             </div>
 
        }

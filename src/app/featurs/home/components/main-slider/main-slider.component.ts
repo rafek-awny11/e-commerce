@@ -15,6 +15,7 @@ export class MainSliderComponent {
     touchDrag: true,
     pullDrag: false,
     dots: true,
+    rtl:true,
     autoplay: true,
     autoplayTimeout: 1800,
     autoplayHoverPause: true,

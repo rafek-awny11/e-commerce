@@ -1,3 +1,5 @@
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
+
 import { CartService } from './../../../featurs/cart/services/cart.service';
 import { Component, computed, HostListener, inject, Input, OnInit, PLATFORM_ID,  Signal,  signal } from '@angular/core';
 import { FlowbiteService } from '../../../core/services/flowbite.service';
@@ -5,11 +7,13 @@ import { initFlowbite } from 'flowbite';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../../../core/auth/services/auth.service';
 import { isPlatformBrowser } from '@angular/common';
+import { MyTranslateService } from '../../../core/services/myTranslate/my-translate.service';
+
 
 
 @Component({
   selector: 'app-navbar',
-  imports: [RouterLink , RouterLinkActive],
+  imports: [RouterLink , RouterLinkActive , TranslatePipe],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
@@ -19,6 +23,8 @@ constructor(private flowbiteService: FlowbiteService) {}
 private readonly authService = inject(AuthService);
 private readonly cartService = inject(CartService);
 private readonly id = inject(PLATFORM_ID);
+private readonly myTranslateService = inject(MyTranslateService);
+private readonly translateService = inject(TranslateService);
 
 
 isScrolling: boolean = false;
@@ -53,6 +59,15 @@ count:Signal<number> = computed(() => this.cartService.countNumber());
 
   signOut(): void{
     this.authService.logOut();
+  }
+
+
+  change(lang:string): void{
+    this.myTranslateService.changeLangTranslate(lang); 
+
+  }
+  currentLang(lang:string): boolean{
+    return this.translateService.currentLang === lang;
   }
 }
 

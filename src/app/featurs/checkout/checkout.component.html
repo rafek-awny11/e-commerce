@@ -1,5 +1,5 @@
 <section class="bg-gray-800 p-10 my-14 md:w-1/2 mx-auto rounded-lg shadow-2xl">
-    <h1 class="text-4xl text-center text-green-700 py-5">CheckOut</h1>
+    <h1 class="text-4xl text-center text-green-700 py-5">{{'checkout.checkout' | translate}}</h1>
 
     <form [formGroup]="checkOutForm" >
 
@@ -13,7 +13,7 @@
         [labelInput] ="'Phone'" 
         [typeInput] ="'tel'"
         > 
-        accept only egypt phone numbers 
+        {{'checkout. acceptonlyegyptphonenumbers' | translate}}
          </app-input>
 
         <app-input [element]="'input'" [control]="checkOutForm.get('shippingAddress')?.get('city')"
@@ -24,8 +24,8 @@
         ></app-input>
 
         <div class="flex items-center space-x-10 my-5">
-             <button class="btn" (click)="submitForm('vis')">Payment By Visa</button>
-            <button class="btn" (click)="submitForm('cash')">Payment By cash</button>
+             <button class="btn" (click)="submitForm('vis')">{{'checkout.PaymentByVisa' | translate}}</button>
+            <button class="btn" (click)="submitForm('cash')">{{'checkout.PaymentBycash' | translate}}</button>
             
         </div>
 

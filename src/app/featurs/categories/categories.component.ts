@@ -1,10 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { CategoriesService } from '../../core/services/categories/categories.service';
 import { Category } from '../cart/models/cart.interface';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-categories',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './categories.component.html',
   styleUrl: './categories.component.css'
 })

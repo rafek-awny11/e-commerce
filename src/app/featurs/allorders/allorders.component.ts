@@ -51,8 +51,4 @@ getUserId():string {
   });
   
 }
-
-
-
-
 }

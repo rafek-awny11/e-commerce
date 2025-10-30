@@ -6,9 +6,10 @@ import { ProductsService } from '../../core/services/products/products.service';
 import {NgxPaginationModule} from 'ngx-pagination';
 import { SearchPipe } from '../../shared/pipes/search-pipe';
 import { FormsModule } from '@angular/forms';
+import { TranslatePipe } from '@ngx-translate/core';
 @Component({
   selector: 'app-products',
-  imports: [CardComponent,  NgxPaginationModule , SearchPipe , FormsModule],
+  imports: [CardComponent,  NgxPaginationModule , SearchPipe , FormsModule , TranslatePipe],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })

@@ -1,6 +1,6 @@
 <section class="py-14">
     <div class="container">
-        <h1 class="text-center text-5xl mb-4 text-green-700"> Details Product:</h1>
+        <h1 class="text-center text-5xl mb-4 text-green-700"> {{'shop.detailsProduct' | translate }}</h1>
         <div class="grid  sm:grid-cols-12 items-center gap-4 ">
 
             <div class="col-span-3">
@@ -16,7 +16,7 @@
                     <span>  <i class="fas fa-star text-yellow-500"></i> {{productDetails.ratingsAverage}} </span>
 
                 </div>
-                <button  class="btn mt-2" (click)="addProductItemToCart(productDetails._id)"> Add To Cart  <i class="fa-solid fa-cart-plus"></i></button>
+                <button  class="btn mt-2" (click)="addProductItemToCart(productDetails._id)"> {{'shop.AddToCart' | translate}}  <i class="fa-solid fa-cart-plus"></i></button>
             </div>
 
         </div>

@@ -1,12 +1,7 @@
 {
   "name": "e-commerce",
   "version": "0.0.0",
-
-  "resolutions": {
-  "@tailwindcss/oxide": "0.0.0"
-},
   "scripts": {
-    "preinstall": "npx npm-force-resolutions",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -26,16 +21,18 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": " 20.3.0",
-    "@angular/common": " 20.3.0",
-    "@angular/compiler": " 20.3.0",
-    "@angular/core": " 20.3.0",
-    "@angular/forms": " 20.3.0",
-    "@angular/platform-browser": " 20.3.0",
-    "@angular/platform-server": " 20.3.0",
-    "@angular/router": " 20.3.0",
-    "@angular/ssr": " 20.3.0",
+    "@angular/animations": "^20.2.1",
+    "@angular/common": "^20.2.1",
+    "@angular/compiler": "^20.2.1",
+    "@angular/core": "^20.2.1",
+    "@angular/forms": "^20.2.1",
+    "@angular/platform-browser": "^20.2.1",
+    "@angular/platform-server": "^20.2.1",
+    "@angular/router": "^20.2.1",
+    "@angular/ssr": "^20.1.0",
     "@fortawesome/fontawesome-free": "^7.0.0",
+    "@ngx-translate/core": "^17.0.0",
+    "@ngx-translate/http-loader": "^17.0.0",
     "@tailwindcss/postcss": "^4.1.12",
     "express": "^5.1.0",
     "flowbite": "^3.1.2",
@@ -45,7 +42,6 @@
     "ngx-pagination": "^6.0.3",
     "ngx-spinner": "^19.0.0",
     "ngx-toastr": "^19.1.0",
-    "node": "^25.0.0",
     "or": "^0.2.0",
     "postcss": "^8.5.6",
     "rxjs": "~7.8.0",
@@ -54,9 +50,9 @@
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular/build": " 20.3.0",
-    "@angular/cli": " 20.3.0",
-    "@angular/compiler-cli": " 20.3.0",
+    "@angular/build": "^20.1.0",
+    "@angular/cli": "^20.1.0",
+    "@angular/compiler-cli": "^20.1.0",
     "@types/express": "^5.0.1",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^20.17.19",

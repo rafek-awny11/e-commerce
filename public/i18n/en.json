@@ -1,0 +1,49 @@
+{
+    "navbar":{
+        "home":"Home",
+        "products":"Products",
+        "categories":"Categories",
+        "brands":"Brands",
+        "login":"LogIn",
+        "register":"Register",
+        "signout":"signOut",
+        "lang":"Lang"
+    },
+    "login":{
+        "loginNow":"Login Now",
+        "email":"Email",
+        "password":"Password",
+        "signIn":"Sign In",
+        "forgetPassword":"Forget Password ?"
+    },
+    "shop":{
+        "ShopPopularCategories":"Shop Popular Categories",
+        "PopularProducts":"Popular Products",
+        "allBrands":"All Brands",
+        "CategoriesList":"Categories List",
+        "AddToCart":"Add To Cart",
+        "detailsProduct":"Details Product :",
+        "productsList":"Products List",
+        "searchProduct...": "searchProduct...",
+        "cart":"Cart",
+        "items":"Items",
+        "clear":"Clear",
+        "clearcart":"Clear cart",
+        "orderSummary":"Order Summary",
+        "price":"Price",
+        "proceedToCheckOut":"Proceed To CheckOut",
+        "yourCartIsEmpty":"Your Cart Is Empty",
+        "addproducts":"Add products",
+        "proudctsPage":"Proudcts Page"
+        
+
+    },
+    "checkout":{
+        "checkout":"CheckOut",
+        " acceptonlyegyptphonenumbers ":" accept only egypt phone numbers ",
+        "PaymentByVisa":"Payment By Visa",
+        "PaymentBycash": "Payment By cash"
+    }
+
+
+}

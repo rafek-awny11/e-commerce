@@ -1,0 +1,46 @@
+{
+    "navbar": {
+        "home": "الرئيسية",
+        "products": "المنتجات",
+        "categories": "الفئات",
+        "brands": "العلامات التجارية",
+        "login": "تسجيل الدخول",
+        "register": "إنشاء حساب",
+        "signout": "تسجيل الخروج",
+        "lang": "اللغة"
+    },
+    "login": {
+        "loginNow": "سجّل الدخول الآن",
+        "email": "البريد الإلكتروني",
+        "password": "كلمة المرور",
+        "signIn": "تسجيل الدخول",
+        "forgetPassword": "نسيت كلمة المرور؟"
+    },
+      "shop":{
+      "ShopPopularCategories": "تسوق الفئات الشائعة",
+      "PopularProducts": "المنتجات الشائعة",
+      "allBrands": "كل العلامات التجارية",
+      "CategoriesList": "قائمة الفئات",
+      "AddToCart": "أضف إلى السلة",
+      "detailsProduct": ": تفاصيل المنتج",
+      "productsList": "قائمة المنتجات",
+      "searchProduct...": "....ابحث عن منتج",
+      "cart": "السلة",
+      "items": "العناصر",
+      "clear": "مسح",
+      "clearcart": "مسح السلة",
+      "orderSummary": "ملخص الطلب", 
+      "price": "السعر",
+      "proceedToCheckOut": "المتابعة إلى الدفع",
+      "yourCartIsEmpty": "سلتك فارغة",
+      "addproducts": "أضف منتجات",
+      "proudctsPage": "صفحة المنتجات"
+
+    },
+    "checkout": {
+    "checkout": "إتمام الشراء",
+    "acceptonlyegyptphonenumbers": "يُقبل فقط أرقام الهواتف المصرية",
+    "PaymentByVisa": "الدفع ببطاقة فيزا",
+    "PaymentBycash": "الدفع نقدًا"
+  }
+}

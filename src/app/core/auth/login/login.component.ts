@@ -5,11 +5,12 @@ import { Router, RouterLink } from '@angular/router';
 import { InputComponent } from "../../../shared/components/input/input.component";
 import { Subscription } from 'rxjs';
 import { CookieService } from 'ngx-cookie-service';
+import { TranslatePipe } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-login',
-  imports: [ReactiveFormsModule, InputComponent, RouterLink],
+  imports: [ReactiveFormsModule, InputComponent, RouterLink , TranslatePipe],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -25,12 +26,7 @@ subscription:Subscription = new Subscription();
 msgError:string = '';
 isLoading:boolean =false;
 
-  // loginForm: FormGroup = new FormGroup({
-    
-  //   email: new FormControl(null ,[Validators.required , Validators.email]),
-  //   password: new FormControl(null ,[Validators.required ,Validators.pattern(/^\w{6,}$/) ]),
 
-  // })
 loginForm!: FormGroup 
 
 ngOnInit(): void {

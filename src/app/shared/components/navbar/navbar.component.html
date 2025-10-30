@@ -1,5 +1,8 @@
-<nav class=" bg-gray-300 border-gray-200 dark:bg-gray-200  fixed top-0 w-full z-50 transition-all  duration-500" [class.p-2]="!isScrolling">
-  <div class="max-w-screen-1xl flex flex-wrap items-center justify-between p-4 ">
+<nav
+  class="bg-gray-300 border-gray-200 dark:bg-gray-200 fixed top-0 w-full z-50 transition-all duration-500"
+  [class.p-2]="!isScrolling"
+>
+  <div class="max-w-screen-1xl flex flex-wrap items-center justify-between p-4">
     <a
       routerLink="/home"
       class="flex items-center space-x-3 rtl:space-x-reverse"
@@ -30,7 +33,7 @@
         />
       </svg>
     </button>
-    <div class="hidden grow w-full md:flex md:w-auto  " id="navbar-default">
+    <div class="hidden grow w-full md:flex md:w-auto" id="navbar-default">
       @if (isLogin === true) {
       <ul
         class="font-medium ms-4 flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-3 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-200 md:dark:bg-gray-200 dark:border-gray-800"
@@ -41,17 +44,18 @@
             routerLinkActive="text-whit bg-green-500"
             class="block py-2 px-3 rounded-2xl md:p-1 text-gray-600 hover:text-green-700 transition-colors duration-200"
             aria-current="page"
-            >Home</a
+          >
+            {{ "navbar.home" | translate }}</a
           >
         </li>
-        
+
         <li>
           <a
             routerLink="/products"
             routerLinkActive="text-whit bg-green-500"
             class="block py-2 px-3 rounded-2xl md:p-1 text-gray-600 hover:text-green-700 transition-colors duration-200"
             aria-current="page"
-            >Products</a
+            >{{ "navbar.products" | translate }}</a
           >
         </li>
         <li>
@@ -60,7 +64,7 @@
             routerLinkActive="text-whit bg-green-500"
             class="block py-2 px-3 rounded-2xl md:p-1 text-gray-600 hover:text-green-700 transition-colors duration-200"
             aria-current="page"
-            >Categories</a
+            >{{ "navbar.categories" | translate }}</a
           >
         </li>
         <li>
@@ -69,18 +73,68 @@
             routerLinkActive="text-whit bg-green-500"
             class="block py-2 px-3 rounded-2xl md:p-1 text-gray-600 hover:text-green-700 transition-colors duration-200"
             aria-current="page"
-            >Brands</a
+            >{{ "navbar.brands" | translate }}</a
           >
         </li>
-
-        
       </ul>
       }
 
       <ul
         class="font-medium ms-auto flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-3 rtl:space-x-reverse md:mt-0 md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
       >
-      
+        <li>
+          <button
+            id="dropdownNavbarLink"
+            data-dropdown-toggle="dropdownNavbar"
+            class="flex items-center justify-between w-full py-2 px-3 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:hover:bg-gray-700 md:dark:hover:bg-transparent"
+          >
+            {{ "navbar.lang" | translate }}
+            <svg
+              class="w-2.5 h-2.5 ms-2.5"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 10 6"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="m1 1 4 4 4-4"
+              />
+            </svg>
+          </button>
+          <!-- Dropdown menu -->
+          <div
+            id="dropdownNavbar"
+            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-lg shadow-sm w-44 dark:bg-gray-700 dark:divide-gray-600"
+          >
+            <ul
+              class="py-2 text-sm text-gray-700 dark:text-gray-200"
+              aria-labelledby="dropdownLargeButton"
+            >
+              <li>
+                <a
+                [class.hidden]="currentLang('en')"
+                (click)="change('en')"
+                  role="button"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >English</a
+                >
+              </li>
+              <li>
+                <a
+                [class.hidden]="currentLang('ar')"
+                (click)="change('ar')"
+                  role="button"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                  >Arabic</a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
 
         @if (isLogin === false) {
         <li>
@@ -89,7 +143,7 @@
             routerLinkActive="text-whit bg-green-500"
             class="block py-2 px-3 rounded-2xl md:p-0 text-gray-600 hover:text-green-700 transition-colors duration-200"
             aria-current="page"
-            >Login</a
+            >{{ "navbar.login" | translate }}</a
           >
         </li>
         <li>
@@ -98,23 +152,25 @@
             routerLinkActive="text-whit bg-green-500"
             class="block py-2 px-3 rounded-2xl md:p-0 text-gray-600 hover:text-green-700 transition-colors duration-200"
             aria-current="page"
-            >Register</a
+            >{{ "navbar.register" | translate }}</a
           >
         </li>
         } @else {
-          <li>
+        <li>
           <a
             routerLink="/cart"
             routerLinkActive="text-green-700"
-            class="block  relative py-2 px-3 rounded-2xl md:p-1 text-gray-600 hover:text-green-700 transition-colors duration-200"
+            class="block relative py-2 px-3 rounded-2xl md:p-1 text-gray-600 hover:text-green-700 transition-colors duration-200"
             aria-current="page"
-            > <i class="fas fa-cart-plus text-2xl"></i>
-            <span class="absolute  bg-green-700 text-white  text-[12px] rounded-xl p-px top-0 end-0 z-10 "> {{ count ()}}</span>
+          >
+            <i class="fas fa-cart-plus text-2xl"></i>
+            <span
+              class="absolute bg-green-700 text-white text-[12px] rounded-xl p-px top-0 end-0 z-10"
+            >
+              {{ count() }}</span
+            >
           </a>
         </li>
-
-
-
 
         <li class="flex items-center space-x-2">
           <a
@@ -151,16 +207,12 @@
           ></a>
         </li>
 
-
-          
-
-
         <li>
           <a
-          (click)="signOut()"
+            (click)="signOut()"
             class="block py-2 px-3 cursor-pointer rounded-2xl md:p-0 text-gray-600 hover:text-green-700 transition-colors duration-200"
             aria-current="page"
-            >SignOut</a
+            >{{ "navbar.signout" | translate }}</a
           >
         </li>
         }

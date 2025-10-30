@@ -3,11 +3,12 @@ import { ActivatedRoute } from '@angular/router';
 import { ProductDetailsService } from './services/product-details.service';
 import { Product } from '../../core/models/product.interface';
 import { CartService } from '../cart/services/cart.service';
+import { TranslatePipe } from '@ngx-translate/core';
 
 
 @Component({
   selector: 'app-details',
-  imports: [],
+  imports: [TranslatePipe],
   templateUrl: './details.component.html',
   styleUrl: './details.component.css'
 })

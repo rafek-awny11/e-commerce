@@ -11,32 +11,7 @@ export const authGuard: CanActivateFn = (route, state) => {
   const cookieService = inject(CookieService);
   const router = inject(Router);
   const authService = inject(AuthService);
-   const platform = inject(PLATFORM_ID);
-
-
-
-
-//  if (!isPlatformBrowser(platform)) {
-//     return router.parseUrl('/login');
-//   }
-
-//   const token = cookieService.get('token');
-//   if (!token) {
-//     return router.parseUrl('/login'); // يمنع الدخول بدون توكن
-//   }
-
-//   try {
-//     const userData = jwtDecode(token) as { id: string };
-//     if (!userData.id) throw new Error('User ID missing in token');
-//     // لو عايز تخزن في كوكيز:
-//     cookieService.set(STORED_KEYS.userId, userData.id);
-//     return true;
-//   } catch (error) {
-//     console.error('Invalid token', error);
-//     authService.logOut();
-//     return router.parseUrl('/login');
-//   }
-// };
+  const platform = inject(PLATFORM_ID);
 
 
 
@@ -62,9 +37,30 @@ return true;
 
 
 
-  // if (cookieService.get('token')){
-  //   return true;
-  // } else {
-  //    return router.parseUrl('/login'); 
-  //   }
 
+  // if (!isPlatformBrowser(platform)) {
+  //   return true;
+  // }
+
+  // const token = cookieService.get('token');
+
+  // // ⛔ لو مفيش توكن، نرجّع المستخدم للـ login
+  // if (!token) {
+  //   return router.parseUrl('/login');
+  // }
+
+  // try {
+  //   // ✅ فك التوكن وتخزين userId
+  //   const userData = jwtDecode(token) as { id: string };
+  //   if (userData?.id) {
+  //     cookieService.set(STORED_KEYS.userId, userData.id);
+  //     return true;
+  //   } else {
+  //     throw new Error('Invalid token');
+  //   }
+  // } catch (error) {
+  //   console.error('Invalid or expired token', error);
+  //   authService.logOut();
+  //   return router.parseUrl('/login');
+  // }
+// };
